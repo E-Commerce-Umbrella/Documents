@@ -83,8 +83,6 @@ echo '127.0.0.1 orderpacked.local www.orderpacked.local' | tee -a /etc/hosts
 mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';"
 
 # ------------------------------------------------------
-# Install phpmyadmin, create symbolic link to phpmyadmin
+# Install phpmyadmin
 # ------------------------------------------------------
 apt install phpmyadmin -y
-ln -s /etc/phpmyadmin/apache.conf /etc/apache2/sites-enabled/phpmyadmin.conf
-service apache2 restart
