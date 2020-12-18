@@ -49,7 +49,7 @@ npm config set prefix '~/.npm-global'
 export NG_CLI_ANALYTICS="false"
 
 # Now we append your ~/.profile file to add npm-global to your slash commands
-echo 'export PATH=~/.npm-global/bin:$PATH' | sudo tee -a ~/.profile
+echo 'export PATH=~/.npm-global/bin:$PATH' | tee -a ~/.profile
 
 # To refresh...
 source ~/.profile
