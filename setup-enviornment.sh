@@ -84,3 +84,4 @@ mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_pas
 # ------------------------------------------------------
 apt install phpmyadmin -y
 ln -s /etc/phpmyadmin/apache.conf /etc/apache2/sites-enabled/phpmyadmin.conf
+service apache2 reload
