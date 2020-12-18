@@ -74,6 +74,10 @@ echo '127.0.0.1 ecomumbrella.local www.ecomumbrella.local' | tee -a /etc/hosts
 echo '127.0.0.1 shoppinchill.local www.shoppinchill.local' | tee -a /etc/hosts
 echo '127.0.0.1 orderpacked.local www.orderpacked.local' | tee -a /etc/hosts
 
+# ------------------------------------------------------
+# Setup MySQL root user so the phpmyadmin user can login
+# ------------------------------------------------------
+mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';"
 
 # ------------------------------------------------------
 # Install phpmyadmin, create symbolic link to phpmyadmin
