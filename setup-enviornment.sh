@@ -45,6 +45,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 
+# Disable the "Would you like to share anonymous usage data with the Angular Team..." message
+export NG_CLI_ANALYTICS=ci
+
 # Now we append your ~/.profile file to add npm-global to your slash commands
 echo 'export PATH=~/.npm-global/bin:$PATH' | sudo tee -a ~/.profile
 
@@ -52,7 +55,7 @@ echo 'export PATH=~/.npm-global/bin:$PATH' | sudo tee -a ~/.profile
 source ~/.profile
 
 # Install libs
-npm install -g @angular/cli @ionic/cli laravel-echo-server pm2
+npm install -g @angular/cli @ionic/cli laravel-echo-server pm2 > /dev/null
 
 # ------------------------------------------------------
 # Apache
