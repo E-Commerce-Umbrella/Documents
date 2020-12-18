@@ -78,9 +78,9 @@ ln -s /etc/phpmyadmin/apache.conf /etc/apache2/sites-enabled/phpmyadmin.conf
 ```
 
 ### 10) Canocile domain name
-The project front will use a .local domain to make all API calls. Add www.shoppinchill.local to your /etc/hosts file. Ensure your DNS is already configured and your canocile domain name is working correctly. For example, http://www.yoursite.com should take you to your site.
+The project front will use a .localhost domain to make all API calls. Add www.shoppinchill.localhost to your /etc/hosts file. Ensure your DNS is already configured and your canocile domain name is working correctly. For example, http://www.yoursite.com should take you to your site.
 ```
-echo '127.0.0.1 ecomumbrella.local www.ecomumbrella.local' | tee -a /etc/hosts
-echo '127.0.0.1 shoppinchill.local www.shoppinchill.local' | tee -a /etc/hosts
-echo '127.0.0.1 orderpacked.local www.orderpacked.local' | tee -a /etc/hosts
+echo '127.0.0.1 ecomumbrella.local www.ecomumbrella.localhost' | tee -a /etc/hosts
+echo '127.0.0.1 shoppinchill.local www.shoppinchill.localhost' | tee -a /etc/hosts
+echo '127.0.0.1 orderpacked.local www.orderpacked.localhost' | tee -a /etc/hosts
 ```
