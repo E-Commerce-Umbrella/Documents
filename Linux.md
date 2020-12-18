@@ -11,21 +11,21 @@ curl -o- https://raw.githubusercontent.com/E-Commerce-Umbrella/Documents/main/se
 ```
 
 ### 1) Adding repositories to APT
-```
+```bash
 curl -sL https://deb.nodesource.com/setup_10.x | bash
 ```
 ### 2) Updating APT...
-```
+```bash
 apt update
 ```
 
 ### 3) Installing packages...
-```
+```bash
 apt install -y apache2 php libapache2-mod-php php-pear php-mysql apache2-utils mysql-server curl php-cli php-mbstring php-curl git unzip nodejs 
 ```
 
 ### 4) Start web services and then install phpmyadmin
-```
+```bash
 service apache2 start
 service mysql start
 service redis-server start
@@ -33,24 +33,24 @@ apt install phpmyadmin
 ```
 
 ### 5) Composer
-```
+```bash
 curl -sS https://getcomposer.org/installer -o composer-setup.php
 php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 ```
 
 ### 6) Laravel CLI
-```
+```bash
 composer global require laravel/installer
 ```
 
 ### 7) NVM
-```
+```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 ```
 
 ### 8) Angular CLI
 We don't ever want to run NPM as a root user, so we need to point the global node_modules directory to our home. The instructions on the official NPM site show us how.
-```
+```bash
 mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 
@@ -66,7 +66,7 @@ npm install -g @angular/cli @ionic/cli laravel-echo-server pm2
 
 ### 9) Apache
 Enable Apache2 mods & set permissions, create symbolic link to phpmyadmin
-```
+```bash
 a2enmod rewrite
 a2enmod ssl
 a2enmod headers
@@ -79,7 +79,7 @@ ln -s /etc/phpmyadmin/apache.conf /etc/apache2/sites-enabled/phpmyadmin.conf
 
 ### 10) Canocile domain name
 The project front will use a .localhost domain to make all API calls. Add www.shoppinchill.localhost to your /etc/hosts file. Ensure your DNS is already configured and your canocile domain name is working correctly. For example, http://www.yoursite.com should take you to your site.
-```
+```bash
 echo '127.0.0.1 ecomumbrella.local www.ecomumbrella.localhost' | tee -a /etc/hosts
 echo '127.0.0.1 shoppinchill.local www.shoppinchill.localhost' | tee -a /etc/hosts
 echo '127.0.0.1 orderpacked.local www.orderpacked.localhost' | tee -a /etc/hosts
