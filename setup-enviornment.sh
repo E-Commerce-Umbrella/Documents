@@ -16,12 +16,11 @@ apt update
 apt install -y apache2 php libapache2-mod-php php-pear php-mysql apache2-utils mysql-server curl php-cli php-mbstring php-curl git unzip nodejs 
 
 # ------------------------------------------------------
-# Start web services and then install phpmyadmin
+# Start web services
 # ------------------------------------------------------
 service apache2 start
 service mysql start
 service redis-server start
-apt install phpmyadmin
 
 # ------------------------------------------------------
 # Composer
@@ -57,7 +56,7 @@ npm install -g @angular/cli @ionic/cli laravel-echo-server pm2
 
 # ------------------------------------------------------
 # Apache
-# Enable Apache2 mods & set permissions, create symbolic link to phpmyadmin
+# Enable Apache2 mods & set permissions
 # ------------------------------------------------------
 a2enmod rewrite
 a2enmod ssl
@@ -66,7 +65,6 @@ service apache2 reload
 usermod -aG www-data $USER
 chown -R $USER:www-data /var/www
 chmod -R a+w /var/www
-ln -s /etc/phpmyadmin/apache.conf /etc/apache2/sites-enabled/phpmyadmin.conf
 
 # ------------------------------------------------------
 # Canocile domain name
@@ -75,3 +73,10 @@ ln -s /etc/phpmyadmin/apache.conf /etc/apache2/sites-enabled/phpmyadmin.conf
 echo '127.0.0.1 ecomumbrella.local www.ecomumbrella.local' | tee -a /etc/hosts
 echo '127.0.0.1 shoppinchill.local www.shoppinchill.local' | tee -a /etc/hosts
 echo '127.0.0.1 orderpacked.local www.orderpacked.local' | tee -a /etc/hosts
+
+
+# ------------------------------------------------------
+# Install phpmyadmin, create symbolic link to phpmyadmin
+# ------------------------------------------------------
+apt install phpmyadmin -y
+ln -s /etc/phpmyadmin/apache.conf /etc/apache2/sites-enabled/phpmyadmin.conf
