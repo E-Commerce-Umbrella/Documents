@@ -64,7 +64,7 @@ npm install -g @angular/cli @ionic/cli laravel-echo-server pm2 > /dev/null
 a2enmod rewrite
 a2enmod ssl
 a2enmod headers
-service apache2 reload
+service apache2 restart
 usermod -aG www-data $USER
 chown -R $USER:www-data /var/www
 chmod -R a+w /var/www
@@ -87,4 +87,4 @@ mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_pas
 # ------------------------------------------------------
 apt install phpmyadmin -y
 ln -s /etc/phpmyadmin/apache.conf /etc/apache2/sites-enabled/phpmyadmin.conf
-service apache2 reload
+service apache2 restart
