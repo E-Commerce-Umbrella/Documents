@@ -46,7 +46,7 @@ mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 
 # Disable the "Would you like to share anonymous usage data with the Angular Team..." message
-export NG_CLI_ANALYTICS=off
+export NG_CLI_ANALYTICS="false"
 
 # Now we append your ~/.profile file to add npm-global to your slash commands
 echo 'export PATH=~/.npm-global/bin:$PATH' | sudo tee -a ~/.profile
