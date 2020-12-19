@@ -2,12 +2,10 @@
 
 Getting a project running in the Linux enviornment is the easiest method by far. This setup process will guide you through configuring your Linux enviornment for development with E-Commerce Umbrella.
 
-## Index
-
 ### TL;DR
 If you'd rather automate the process you can download a custom script from this repository and execute it to install all libraries and setup confiurations.
 ```bash
-curl -o- https://raw.githubusercontent.com/E-Commerce-Umbrella/Documents/main/setup-enviornment.sh?token=AAHXDSPL2GXYH2Q4JKOFWQC74Y4BI | sudo -E bash -
+curl -o- https://raw.githubusercontent.com/E-Commerce-Umbrella/Documents/main/setup-linux-enviornment.sh?token=AAHXDSPL2GXYH2Q4JKOFWQC74Y4BI | sudo -E bash -
 ```
 
 ### 1) Adding repositories to APT
