@@ -2,6 +2,13 @@
 
 Without question the most difficult to get set up. 
 
+### TL;DR
+Use the following script to automate the install and setup process, or follow each section below
+```
+curl -o- "https://raw.githubusercontent.com/E-Commerce-Umbrella/Documents/main/setup-macos-enviornment.sh?token=AAHXDSL6PSQMNQ5QMVP6UCK742VQC" | bash -
+```
+
+
 ### 1) Install Brew.
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
