@@ -50,14 +50,6 @@ source ~/.profile
 # Install libs
 npm install -g @angular/cli @ionic/cli laravel-echo-server pm2 > /dev/null
 
-
-# --------------------------------------------------
-# Setup permissions
-# --------------------------------------------------
-usermod -aG www-data $USER
-chown -R $USER:www-data /var/www
-chmod -R a+w /var/www
-
 # --------------------------------------------------
 # Canocile domain name
 # The project front will use a .local domain to make all API calls. Add www.shoppinchill.local to your /etc/hosts file. Ensure your DNS is already configured and your canocile domain name is working correctly. For example, http://www.yoursite.com should take you to your site.
