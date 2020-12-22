@@ -1,11 +1,7 @@
 #!/bin/bash
 
 # ------------------------------------------------------
-# Fix for Teradici
-# 
-# This is a fix for:
-# "PCoIP Agent has no available licenses to launch the remote session."
-# execute this script from terminal: 
+# Execute this script from terminal: 
 # curl -o- https://raw.githubusercontent.com/E-Commerce-Umbrella/Documents/main/teradici.sh?token=AAHXDSPJ3A5MYZKMNKXHSH274ZUOE | sudo -E bash -
 # ------------------------------------------------------
 
