@@ -22,7 +22,7 @@ fi
 wget -O teradici-repo-latest.deb https://downloads.teradici.com/ubuntu/teradici-repo-${release}-latest.deb
 apt install --reinstall ./teradici-repo-latest.deb
 apt update
-apt install pcoip-agent-standard
+apt install pcoip-agent-graphics pcoip-agent-standard
 
 pcoip-register-host --registration-code=EY81ZSNSYGSC@4016-A932-615E-F0EB
 reboot
