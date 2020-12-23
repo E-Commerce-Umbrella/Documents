@@ -5,7 +5,7 @@ Without question the most difficult to get set up.
 ### TL;DR
 Use the following script to automate the install and setup process, or follow each section below
 ```
-curl -o- "https://raw.githubusercontent.com/E-Commerce-Umbrella/Documents/main/setup-macos-enviornment.sh?token=AAHXDSL6PSQMNQ5QMVP6UCK742VQC" | bash -
+curl -o- "https://raw.githubusercontent.com/E-Commerce-Umbrella/Documents/main/setup-macos-enviornment.sh" | bash
 ```
 
 
@@ -58,14 +58,7 @@ source ~/.profile
 npm install -g @angular/cli @ionic/cli laravel-echo-server pm2 > /dev/null
 ```
 
-### 7) Setup permissions
-```
-sudo usermod -aG www-data $USER
-sudo chown -R $USER:www-data /var/www
-sudo chmod -R a+w /var/www
-```
-
-### 8) Canocile domain name
+### 7) Canocile domain name
 The project front will use a .local domain to make all API calls. Add www.shoppinchill.local to your /etc/hosts file. Ensure your DNS is already configured and your canocile domain name is working correctly. For example, http://www.yoursite.com should take you to your site.
 ```
 echo '127.0.0.1 ecomumbrella.local www.ecomumbrella.local' | sudo tee -a /etc/hosts
@@ -73,7 +66,7 @@ echo '127.0.0.1 shoppinchill.local www.shoppinchill.local' | sudo tee -a /etc/ho
 echo '127.0.0.1 orderpacked.local www.orderpacked.local' | sudo tee -a /etc/hosts
 ```
 
-### 9) Setup MySQL root user 
+### 8) Setup MySQL root user 
 ```
 sudo mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';"
 ```
