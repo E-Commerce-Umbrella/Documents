@@ -5,7 +5,7 @@ Getting a project running in the Linux enviornment is the easiest method by far.
 ### TL;DR
 If you'd rather automate the process you can download a custom script from this repository and execute it to install all libraries and setup confiurations.
 ```bash
-curl -o- https://raw.githubusercontent.com/E-Commerce-Umbrella/Documents/main/setup-linux-enviornment.sh?token=AAHXDSPL2GXYH2Q4JKOFWQC74Y4BI | sudo -E bash -
+curl -o- https://github.com/E-Commerce-Umbrella/Documents/blob/main/setup-linux-enviornment.sh | sudo -E bash -
 ```
 
 ### 1) Adding repositories to APT
@@ -19,7 +19,7 @@ apt update
 
 ### 3) Installing packages...
 ```bash
-apt install -y apache2 php libapache2-mod-php php-pear php-mysql apache2-utils mysql-server curl php-cli php-mbstring php-curl git unzip nodejs 
+apt install -y apache2 php libapache2-mod-php php-pear php-mysql apache2-utils mysql-server curl php-cli php-mbstring php-curl git unzip nodejs redis-server
 ```
 
 ### 4) Start web services and then install phpmyadmin
@@ -27,7 +27,6 @@ apt install -y apache2 php libapache2-mod-php php-pear php-mysql apache2-utils m
 service apache2 start
 service mysql start
 service redis-server start
-apt install phpmyadmin
 ```
 
 ### 5) Composer
