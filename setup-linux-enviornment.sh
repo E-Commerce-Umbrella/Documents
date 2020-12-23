@@ -8,19 +8,19 @@ curl -sL https://deb.nodesource.com/setup_10.x | bash
 # ------------------------------------------------------
 # Updating APT...
 # ------------------------------------------------------
-apt update
+sudo apt update
 
 # ------------------------------------------------------
 # Installing packages...
 # ------------------------------------------------------
-apt install -y apache2 php libapache2-mod-php php-pear php-mysql apache2-utils mysql-server curl php-cli php-mbstring php-curl git unzip nodejs 
+sudo apt install -y apache2 php libapache2-mod-php php-pear php-mysql apache2-utils mysql-server curl php-cli php-mbstring php-curl git unzip nodejs redis-server
 
 # ------------------------------------------------------
 # Start web services
 # ------------------------------------------------------
-service apache2 start
-service mysql start
-service redis-server start
+sudo service apache2 start
+sudo service mysql start
+sudo service redis-server start
 
 # ------------------------------------------------------
 # Composer
@@ -61,23 +61,23 @@ npm install -g @angular/cli @ionic/cli laravel-echo-server pm2 > /dev/null
 # Apache
 # Enable Apache2 mods & set permissions
 # ------------------------------------------------------
-a2enmod rewrite
-a2enmod ssl
-a2enmod headers
-service apache2 restart
-usermod -aG www-data $USER
-chown -R $USER:www-data /var/www
-chmod -R a+w /var/www
+sudo a2enmod rewrite
+sudo a2enmod ssl
+sudo a2enmod headers
+sudo service apache2 restart
+sudo usermod -aG www-data $USER
+sudo chown -R $USER:www-data /var/www
+sudo chmod -R a+w /var/www
 
 # ------------------------------------------------------
 # Canocile domain name
 # The project front will use a .local domain to make all API calls. Add www.shoppinchill.local to your /etc/hosts file. Ensure your DNS is already configured and your canocile domain name is working correctly. For example, http://www.yoursite.com should take you to your site.
 # ------------------------------------------------------
-echo '127.0.0.1 ecomumbrella.local www.ecomumbrella.local' | tee -a /etc/hosts
-echo '127.0.0.1 shoppinchill.local www.shoppinchill.local' | tee -a /etc/hosts
-echo '127.0.0.1 orderpacked.local www.orderpacked.local' | tee -a /etc/hosts
+echo '127.0.0.1 ecomumbrella.local www.ecomumbrella.local' | sudo tee -a /etc/hosts
+echo '127.0.0.1 shoppinchill.local www.shoppinchill.local' | sudo tee -a /etc/hosts
+echo '127.0.0.1 orderpacked.local www.orderpacked.local' | sudo tee -a /etc/hosts
 
 # ------------------------------------------------------
 # Setup MySQL root user so the phpmyadmin user can login
 # ------------------------------------------------------
-mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';"
+sudo mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';"
